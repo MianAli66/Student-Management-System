@@ -1,0 +1,69 @@
+.student-signup-container {
+  background: url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b") no-repeat center center;
+  background-size: cover; 
+  background-attachment: fixed;  
+  min-height: 100vh; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.student-form-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 360px;
+}
+
+.student-title {
+  text-align: center;
+  color: #2d3436;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.student-form-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-form-box label {
+  text-align: left;
+  margin-bottom: 6px;
+  color: #2d3436;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.student-form-box input {
+  margin-bottom: 12px;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.student-form-box input:focus {
+  border-color: #4b7bec;
+}
+
+.student-btn {
+  background-color: #4b7bec;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.student-btn:hover {
+  background-color: #3867d6;
+}

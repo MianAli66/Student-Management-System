@@ -1,0 +1,82 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+.teacher-main-container {
+  background-color: #eaeaea;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.teacher-profile-section {
+  width: 50%;
+  padding-right: 30px;
+  border-right: 2px solid #e0e0e0;
+}
+
+.teacher-section-title {
+  font-size: 1.65rem;
+  color: #00796b;
+  margin-bottom: 25px;
+}
+
+.teacher-profile-card {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.teacher-student-section {
+  width: 70%;
+  padding-left: 40px;
+}
+
+.teacher-student-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.teacher-student-box {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.teacher-student-box:hover {
+  transform: translateY(-5px);
+  background: #e0f7f4;
+}
+
+.teacher-student-name {
+  font-size: 1.2rem;
+  color: #004d40;
+  margin-bottom: 5px;
+}
+
+.teacher-student-course {
+  color: #555;
+}

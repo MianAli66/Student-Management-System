@@ -1,0 +1,95 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.tea-container {
+  background: url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1500&q=80") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", Arial, sans-serif;
+  padding: 20px;
+}
+
+.tea-box {
+  background: #ffffff; 
+  padding: 45px 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.tea-title {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.tea-label {
+  display: block;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.tea-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tea-input:focus {
+  border-color: #4b7bec;
+  box-shadow: 0 0 5px rgba(75, 123, 236, 0.4);
+}
+
+.tea-btn {
+  width: 100%;
+  background-color: #4b7bec;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tea-btn:hover {
+  background-color: #3867d6;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 500px) {
+  .tea-box {
+    padding: 35px 25px;
+  }
+
+  .tea-title {
+    font-size: 22px;
+  }
+}

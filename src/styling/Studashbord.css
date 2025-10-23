@@ -1,0 +1,185 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+.selected-teacher-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  margin: 5px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-btn:hover {
+  transform: scale(1.2);
+}
+
+#profile-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 8rem;
+  top: 8rem;
+    position: fixed;
+}
+
+#toggle-profile-btn {
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+#toggle-profile-btn:hover {
+  background-color: #00997d;
+  transform: scale(1.05);
+}
+
+#profile-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 25px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#profile-title {
+  color: #00796b;
+  margin-bottom: 15px;
+}
+
+#selected-subjects h3 {
+  color: #00bfa5;
+  margin-bottom: 10px;
+}
+
+#selected-subjects ul {
+  list-style-type: disc;
+  padding-left: 20px;
+} 
+
+#toggle-profile-btn {
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+   position: absolute; 
+  top: -3rem;      
+  right: 0; 
+  width: 8rem;           
+}
+#toggle-profile-btn:hover {
+  background-color: #00997d;
+  transform: scale(1.05);
+}
+#dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  padding: 50px;
+  box-sizing: border-box;
+  gap: 30px;
+   background-attachment: fixed;
+}
+
+#teachers-section {
+  flex: 2;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden; 
+  position: absolute;
+  width: 30%;
+  left: 7rem;
+  top: 5rem; 
+}
+
+#profile-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#teachers-section {
+  flex: 2;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#teachers-title {
+  color: #00796b;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+#teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+#teacher-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+#teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+#select-btn {
+  margin-top: 12px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #00bfa5;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#select-btn:hover {
+  background-color: #00997d;
+}
