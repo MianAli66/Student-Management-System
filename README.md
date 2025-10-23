@@ -1,70 +1,214 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 🎓 Student Management System
 
-In the project directory, you can run:
+### (React + Node.js + Express + PostgreSQL)
 
-### `npm start`
+> A complete **Student Management System** where **Teachers** and **Students** can register, log in, and interact — all within one web portal.
+> Built using **React (Frontend)**, **Node.js + Express (Backend)**, and **PostgreSQL (Database)**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🗂️ Project Overview
 
-### `npm test`
+### 💻 Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Built with **React.js**
+* Handles **Signup**, **Login**, **OTP Verification**, and **Dashboards**
+* Communicates with backend API using **fetch/axios**
 
-### `npm run build`
+### ⚙️ Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Node.js + Express** server
+* Connected to **PostgreSQL** database
+* Secured credentials using `.env`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🧩 Database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* PostgreSQL database containing 3 relational tables:
 
-### `npm run eject`
+  * 🧍‍♀️ `students`
+  * 👨‍🏫 `teachers`
+  * 🔗 `student_teachers` (link table for relations)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Installation Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1️⃣ Clone the Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/MianAli66/Student-Management-System.git
+cd "Student Management System/portal"
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🖥️ Frontend Setup (React)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+npm start
+```
 
-### Code Splitting
+🌐 Runs on: [http://localhost:3001](http://localhost:3001)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🧠 Backend Setup (Node.js + Express)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+cd backend
+npm install
+nodemon backend.js
+```
 
-### Making a Progressive Web App
+🔗 Runs on: [http://localhost:5000](http://localhost:5000)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🗄️ Database Setup (PostgreSQL)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 🔸 Step 1: Create Database
 
-### Deployment
+```sql
+CREATE DATABASE students_data;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 🔸 Step 2: Create Tables
 
-### `npm run build` fails to minify
+#### 🧍‍♀️ students
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sql
+CREATE TABLE students (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  father VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(255)
+);
+```
+
+#### 👨‍🏫 teachers
+
+```sql
+CREATE TABLE teachers (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(255),
+  subject VARCHAR(100),
+  qualification VARCHAR(100)
+);
+```
+
+#### 🔗 student_teachers
+
+```sql
+CREATE TABLE student_teachers (
+  id SERIAL PRIMARY KEY,
+  student_id INT REFERENCES students(id),
+  teacher_id INT REFERENCES teachers(id)
+);
+```
+
+---
+
+## 🌐 Environment Variables (.env)
+
+📁 Inside `backend/` folder, create a file named `.env`:
+
+```
+PG_USER=postgres
+PG_HOST=localhost
+PG_DATABASE=students_data
+PG_PASSWORD=a22L=alit
+PG_PORT=5432
+```
+
+### Example Database Connection (backend.js)
+
+```js
+import pg from "pg";
+import dotenv from "dotenv";
+dotenv.config();
+
+const db = new pg.Client({
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
+});
+
+db.connect();
+```
+
+---
+
+## 🧾 Folder Structure
+
+```
+portal/
+│
+├── backend/
+│   ├── backend.js
+│   ├── .env
+│   ├── routes/
+│   │   ├── studentRoutes.js
+│   │   └── teacherRoutes.js
+│
+├── src/
+│   ├── components/
+│   ├── styling/
+│   ├── App.js
+│   └── index.js
+│
+├── public/
+├── package.json
+├── .gitignore
+└── README.md
+```
+
+📝 Note:
+
+* Create one `.env` file inside **backend/** for database connection.
+* And another `.env` file in **portal/** for frontend port (3001).
+
+---
+
+## 🚀 Run Both Servers
+
+In two separate terminals:
+
+```bash
+# Frontend
+cd portal
+npm start
+
+# Backend
+cd backend
+nodemon backend.js
+```
+
+---
+
+## 👨‍💻 Developer Info
+
+**Mian Ali**
+📍 Full Stack Developer
+🔗 [GitHub Profile](https://github.com/MianAli66)
+
+---
+
+## 🌟 Key Highlights
+
+✅ PostgreSQL Database Integration
+✅ Node + Express REST APIs
+✅ React Frontend with OTP + Authentication
+✅ .env Configuration for Security
+✅ Clean and Modular Folder Structure
+
+
+
+
